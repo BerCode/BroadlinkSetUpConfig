@@ -1,0 +1,365 @@
+{
+    "bridge": {
+        "name": "Homebridge EB29",
+        "username": "USER NAME",
+        "port": PORT,
+        "pin": "YOUR PIN"
+    },
+    "accessories": [],
+    "platforms": [
+        {
+            "name": "Config",
+            "port": PORT,
+            "platform": "config"
+        },
+        {
+            "platform": "BroadlinkRM",
+            "name": "Broadlink RM",
+            "hideScanFrequencyButton": false, //will be change into true once completed
+            "hideLearnButton": false, //will be change into true once completed
+            "hideWelcomeMessage": false, //will be change into true once completed
+            "hosts": [
+                {
+                    "address": "IP Adrress from Broadlink Device without @",
+                    "mac": "Mac Adrress from Broadlink Device",
+                    "isRFSupported": true,
+                    "isRM4": true
+                }
+            ],
+            "accessories": [
+                {
+                    "name": "Philips-TV",
+                    "type": "tv",
+                    "data": {
+                        "on": "Paste 'on' code after using learn IR code",
+                        "off": "Paste 'off' code after using learn IR code",
+                        "remote": {
+                            "select": "Paste 'select' code after using learn IR code",
+                            "arrowUp": "Paste 'arrowUp' code after using learn IR code",
+                            "arrowDown": "Paste 'arrowDown' code after using learn IR code",
+                            "arrowLeft": "Paste 'arrowLeft' code after using learn IR code",
+                            "arrowRight": "Paste 'arrowRight' code after using learn IR code",
+                            "back": "Paste 'back' code after using learn IR code",
+                            "playPause": "Paste 'playPause' code after using learn IR code",
+                            "info": "Paste 'info' code after using learn IR code",
+                            "nextTrack": "Paste 'nextTrack' code after using learn IR code",
+                            "previousTrack": "Paste 'previousTrack' code after using learn IR code"
+                        },
+                        "volume": {
+                            "up": "Paste 'Volume up' code after using learn IR code",
+                            "down": "Paste 'Volum Down' code after using learn IR code"
+                        },
+                        "inputs": [
+                            {
+                                "name": "TV",
+                                "type": "hdmi",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Volume Up",
+                                "type": "hdmi",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Mute",
+                                "type": "hdmi",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Volume Down",
+                                "type": "application",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Home",
+                                "type": "other",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Back",
+                                "type": "application",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Up",
+                                "type": "other",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Down",
+                                "type": "other",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Left",
+                                "type": "other",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Right",
+                                "type": "other",
+                                "data": [
+                                    {
+                                        "data": "Paste Channels or buttons",
+                                        "pause": 0.3
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Humidity Sensor", //Only if you own broadlink HTS2 cable with Humidity And Temp sesnsor.
+                    "type": "humiditySensor",
+                    "humidityAdjustment": 0
+                },
+                {
+                    "name": "Thermometer", //Only if you own broadlink HTS2 cable with Humidity And Temp sesnsor.
+                    "type": "humiditySensor",
+                    "type": "temperatureSensor",
+                    "temperatureAdjustment": 0,
+                    "humidityAdjustment": 0
+                },
+                {
+                    "name": "AC",
+                    "type": "air-conditioner",
+                    "temperatureAdjustment": -1,
+                    "minTemperature": 17,
+                    "maxTemperature": 30,
+                    "defaultCoolTemperature": 19,
+                    "defaultHeatTemperature": 22,
+                    "replaceAutoMode": "cool",
+                    "sendTemperatureOnlyWhenOff": true,
+                    "ignoreTemperatureWhenOff": true,
+                    "temperatureUpdateFrequency": 10,
+                    "turnOnWhenOff": false,
+                    "allowResend": true,
+                    "preventResendHex": true,
+                    "data": {
+                        "off": [
+                            {
+                                "data": "Paste 'off' code after using learn IR code",
+                                "sendCount": 2,
+                                "interval": 0.75
+                            }
+                        ],
+                        "on": "Paste 'on' code after using learn IR code",
+                        "auto17": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote" 
+                        },
+                        "auto18": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto19": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto20": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto21": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto22": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto23": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto24": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto25": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto26": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto27": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto28": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto29": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "auto30": {
+                            "pseudo-mode": "auto",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool17": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool18": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool19": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool20": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool21": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool22": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool23": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool24": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool25": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool26": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool27": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool28": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool29": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "cool30": {
+                            "pseudo-mode": "cool",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat17": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat18": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat19": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat20": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat21": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat22": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat23": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat24": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat25": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat26": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat27": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat28": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat29": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        },
+                        "heat30": {
+                            "pseudo-mode": "heat",
+                            "data": "Paste Temp+(heat/cold/auto) Code after using learn IR code - Code will be generated via up and down buttons on your remote"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
